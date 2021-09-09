@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigspot| Products</title>
+    <!--tailwind css-->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="tailwind.css" rel="stylesheet">
+</head>
+<body>
+    <!--nav bar-->
+    <!-- component -->
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+  <div class="w-full rounded-lg antialiased bg-gray-100 dark-mode:bg-gray-900 mb-4">
+  <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 ">
+    <div x-data="{ open: true }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+      <div class="flex flex-row items-center justify-between p-4">
+        <a href="#" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">BigSpot</a>
+        <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+            <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+      <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+        <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html">Home</a>
+        <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#products">Products</a>
+        <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html#about">About</a>
+        <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html#contact">Contact</a>
+
+        <div @click.away="open = false" class="relative" x-data="{ open: false }">
+          <button @click="open = !open" class="flex flex-row text-gray-900 bg-gray-200 items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+            <span>Categories</span>
+            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </button>
+          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right">
+            <div class="px-2 pt-2 pb-4 bg-white rounded-md shadow-lg dark-mode:bg-gray-700">
+              <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2">
+                <a class="flex flex row items-start rounded-lg bg-transparent p-2 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+
+                  <div class="ml-3">
+                    <p class="font-semibold">Brandy</p>
+
+                  </div>
+                </a>
+
+                <a class="flex flex row items-start rounded-lg bg-transparent p-2 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+
+                  <div class="ml-3">
+                    <p class="font-semibold">Whisky</p>
+
+                  </div>
+                </a>
+
+                <a class="flex flex row items-start rounded-lg bg-transparent p-2 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+
+                  <div class="ml-3">
+                    <p class="font-semibold">Vodka</p>
+
+                  </div>
+                </a>
+                <a class="flex flex row items-start rounded-lg bg-transparent p-2 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+
+                  <div class="ml-3">
+                    <p class="font-semibold">Gin</p>
+
+                  </div>
+                </a>
+                <a class="flex flex row items-start rounded-lg bg-transparent p-2 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+
+                  <div class="ml-3">
+                    <p class="font-semibold">Wine</p>
+
+                  </div>
+                </a>
+                <a class="flex flex row items-start rounded-lg bg-transparent p-2 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+
+                  <div class="ml-3">
+                    <p class="font-semibold">Spirits</p>
+
+                  </div>
+                </a>
+                <a class="flex flex row items-start rounded-lg bg-transparent p-2 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+
+                  <div class="ml-3">
+                    <p class="font-semibold">Beer</p>
+
+                  </div>
+                </a>
+                <a class="flex flex row items-start rounded-lg bg-transparent p-2 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">
+
+                  <div class="ml-3">
+                    <p class="font-semibold">Energy drink</p>
+
+                  </div>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+
+    <!--product columns-->
+    <section class="products">
+        <main class="py-16 container mx-auto px-6 md:px-0">
+            <h1 class="text-2xl font-bold text-black">Our Products</h1>
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-2 ">
+                <!--1-->
+                <div>
+                    <div class="py-6 ">
+                        <div class="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
+                          <div class="w-1/3 bg-cover" style="background-image: url('img/County-Brandy.jpg'); background-position: center;">
+                          </div>
+                          <div class="w-2/3 p-4">
+                            <h1 class="text-gray-900 font-bold text-2xl">Brandy</br><span class="font-semibold">County</span></h1>
+                            <p class="mt-2 text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit In odit exercitationem fuga id nam quia</p>
+
+                            <div class="flex item-center justify-between mt-3">
+                              <h1 class="text-gray-700 font-bold text-xl">Ksh 800</h1>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <!--2-->
+                <div>
+                    <div class="py-6">
+                        <div class="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
+                          <div class="w-1/3 bg-cover" style="background-image: url('img/vat.jpg'); background-position:center;">
+                          </div>
+                          <div class="w-2/3 p-4">
+                            <h1 class="text-gray-900 font-bold text-2xl">Whisky</br><span class="font-semibold">VAT</span></h1>
+                            <p class="mt-2 text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit In odit exercitationem fuga id nam quia</p>
+
+                            <div class="flex item-center justify-between mt-3">
+                              <h1 class="text-gray-700 font-bold text-xl">Ksh1200</h1>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <!--3-->
+                <div>
+                    <div class="py-6">
+                        <div class="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
+                          <div class="w-1/3 bg-cover" style="background-image: url('img/kibao.jpg'); background-position: center;">
+                          </div>
+                          <div class="w-2/3 p-4">
+                            <h1 class="text-gray-900 font-bold text-2xl">Vodka</br><span class="font-semibold">Kibao</span></h1>
+                            <p class="mt-2 text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit In odit exercitationem fuga id nam quia</p>
+
+                            <div class="flex item-center justify-between mt-3">
+                              <h1 class="text-gray-700 font-bold text-xl">Ksh 600</h1>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <!--4-->
+                <div>
+                    <div class="py-6">
+                        <div class="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
+                          <div class="w-1/3 bg-cover" style="background-image: url('img/Chrome-gin-250ml.jpg'); background-position: center;">
+                          </div>
+                          <div class="w-2/3 p-4">
+                            <h1 class="text-gray-900 font-bold text-2xl">Gin</br><span class="font-semibold">Chrome</span></h1>
+                            <p class="mt-2 text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit In odit exercitationem fuga id nam quia</p>
+
+                            <div class="flex item-center justify-between mt-3">
+                              <h1 class="text-gray-700 font-bold text-xl">Ksh 600</h1>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                               <!--5-->
+                               <div>
+                                <div class="py-6 ">
+                                    <div class="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
+                                      <div class="w-1/3 bg-cover" style="background-image: url('img/four_cousins_natural_sweet_red.jpeg'); background-position: center;">
+                                      </div>
+                                      <div class="w-2/3 p-4">
+                                        <h1 class="text-gray-900 font-bold text-2xl">Wine</br><span class="font-semibold">Four Cousins</span></h1>
+                                        <p class="mt-2 text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit In odit exercitationem fuga id nam quia</p>
+
+                                        <div class="flex item-center justify-between mt-3">
+                                          <h1 class="text-gray-700 font-bold text-xl">Ksh1200</h1>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                                           <!--6-->
+                <div>
+                    <div class="py-6 ">
+                        <div class="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
+                          <div class="w-1/3 bg-cover" style="background-image: url('img/kane.jfif'); background-position: center;">
+                          </div>
+                          <div class="w-2/3 p-4">
+                            <h1 class="text-gray-900 font-bold text-2xl">Spirit</br><span class="font-semibold">KANE</span></h1>
+                            <p class="mt-2 text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit In odit exercitationem fuga id nam quia</p>
+
+                            <div class="flex item-center justify-between mt-3">
+                              <h1 class="text-gray-700 font-bold text-xl">Ksh 600</h1>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                               <!--7-->
+                               <div>
+                                <div class="py-6 ">
+                                    <div class="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
+                                      <div class="w-1/3 bg-cover" style="background-image: url('img/tusker.jpg'); background-position: center;">
+                                      </div>
+                                      <div class="w-2/3 p-4">
+                                        <h1 class="text-gray-900 font-bold text-2xl">Beer </br><span class="font-semibold">Tusker</span></h1>
+                                        <p class="mt-2 text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit In odit exercitationem fuga id nam quia</p>
+
+                                        <div class="flex item-center justify-between mt-3">
+                                          <h1 class="text-gray-700 font-bold text-xl">Ksh 200</h1>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                                           <!--8-->
+                <div>
+                    <div class="py-6 ">
+                        <div class="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
+                          <div class="w-1/3 bg-cover" style="background-image: url('img/redbull.jfif'); background-position: center;">
+                          </div>
+                          <div class="w-2/3 p-4">
+                            <h1 class="text-gray-900 font-bold text-2xl">Energy drink </br><span class="font-semibold">Red bull</span></h1>
+                            <p class="mt-2 text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit In odit exercitationem fuga id nam quia</p>
+                        
+                            <div class="flex item-center justify-between mt-3">
+                              <h1 class="text-gray-700 font-bold text-xl">Ksh 350</h1>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+              </div>
+        </main>
+
+    </section>
+
+
+    <!--footer-->
+    <section class="footer">
+        <footer class="py-4 text-white  mx-auto   md:px-0 bg-gray-900  ">
+
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-2 flex items-center px-4  ">
+                <!--1-->
+                <div>
+                    <p><span class="font-semibold text-2xl">BigSpot </br></span>Drinking is not a solution</p>
+                </div>
+                <!--2-->
+                <div>
+                    <p><span class="font-semibold">Help:</span>+254 676 5656</p>
+                </div>
+                <!--3-->
+                <div>
+                   <p><span class="font-semibold">M-pesa till:</span>787878</p>
+                </div>
+                <!--4-->
+                <div>
+                    <p>Privacy policy & cookies |copyright 2021.</p>
+                </div>
+              </div>
+            </footer>
+
+    </section>
+</body>
+</html>
